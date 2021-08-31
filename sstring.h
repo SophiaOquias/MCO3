@@ -19,6 +19,14 @@ int isLetter(char letter) {
 	return 0; 
 }
 
+// returns 1 if word1 and word2 have the same first letter, 0 if otherwise 
+int isSameFirst(string word1, string word2) {
+	if(word1[0] == word2[0])
+		return 1;
+	
+	return 0; 
+}
+
 // converts all capital letters in a string to lower case letters 
 void convertLowCase(string word) {
 	int i;
