@@ -4,7 +4,7 @@
 
 typedef struct node {
 	string key;
-	node *left, *right; 
+	struct node *left, *right; 
 } nodeType; 
 
 
@@ -13,7 +13,7 @@ nodeType *create(string word) {
 	
 	nodeType *node = (nodeType*)malloc(sizeof(nodeType));
 	
-	node->key = word;
+	strcpy(node->key, word);
 	node->left = NULL;
 	node->right = NULL;
 	
@@ -32,14 +32,31 @@ int search(nodeType *node, string key) {
 		return search(node->right, key); 
 }
 
-nodeType insert(nodeType *node, string word) {
-	if(node->key != NULL) {
-		if(strcmp(word, node->key) <= 0) // if word <= node->key
-			node->left = insert(node->left, word);
-		else 
+// inserts a string into a tree
+nodeType *insert(nodeType *node, string word) {
+	
+	if(strcmp(word, node->key) <= 0) {
+		if(node->left == NULL) 
+			node->left = create(word); 
+		else
+			node->left = insert(node->left, word); 
+	}
+	
+	else {
+		if(node->right == NULL)
+			node->right = create(word); 
+		else
 			node->right = insert(node->right, word); 
 	}
 	
 	return node; 
 }
 
+// prints elements of tree inorder 
+void inorder(nodeType *node) {
+	if(node != NULL) {
+		inorder(node->left); 
+		printf("%s\n", node->key); 
+		inorder(node->right); 
+	}
+}
