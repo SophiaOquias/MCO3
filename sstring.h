@@ -1,8 +1,3 @@
-/* 
-This header file creates an alias for a string with a capacity of 46 characters
-and other string manipulation functions. 
-*/
-
 #include <string.h>
 #include <stdio.h>
 
