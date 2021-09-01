@@ -1,11 +1,11 @@
 # MCO3
 
 ## Members 
-Kalaw, Stacy
-Oquias, Sophia
-Sy, Richard 
+- Kalaw, Stacy
+- Oquias, Sophia
+- Sy, Richard 
 
-### Main Algorithm 
+### Main Algorithm (Still need to test)
 1. While the fscanf does not detect EOF do: 
 	1. If the scanned character is a letter, add it to character array word
 		1. j++
@@ -17,3 +17,8 @@ Sy, Richard
 		5. strcpy(word, "")
 		6. j = 0
 	3. i++
+	
+	
+	
+	
+	
