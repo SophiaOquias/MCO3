@@ -13,10 +13,11 @@ int main() {
 	else {
 		insert(tree, word1); 
 	}
-
-//    printf("Is 'exist' exist?: %d\n", search(tree, "exist"));
 	
 	inorder(tree); 
+	
+	if(search(tree, "exist") == 0)
+    	printf("not exist\n"); 
 	
 	return 0; 
 }
