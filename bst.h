@@ -25,13 +25,13 @@ nodeType *create(string word) {
 // returns 1 if string exists in a tree, 0 if otherwise 
 int search(nodeType *node, string key) {
 	if(strcmp(key, node->key) == 0) // if key == node->key
-		return 1; 
+		return 1;
 	if(node == NULL)
 		return 0;
 	if(strcmp(key, node->key) < 0) // if key < node->key 
 		return search(node->left, key);
 	else
-		return search(node->right, key); 
+		return search(node->right, key);
 }
 
 // inserts a string into a tree
@@ -66,14 +66,12 @@ void inorder(nodeType *node) {
 
 // returns the node that matches the key 
 nodeType *searchNode(nodeType *node, string key) {
-	if(strcmp(key, node->key) == 0) // if key == node->key
-		return node; 
-	if(node == NULL)
-		return NULL;
-	if(strcmp(key, node->key) < 0) // if key < node->key 
+	if(strcmp(key, node->key) == 0 || node == NULL) // if key == node->key
+		return node;
+	if(strcmp(key, node->key) < 0) // if key < node->key
 		return searchNode(node->left, key);
 	else
-		return searchNode(node->right, key); 
+		return searchNode(node->right, key);
 }
 
 // increments count property in node
