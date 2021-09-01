@@ -58,7 +58,7 @@ nodeType *insert(nodeType *node, string word) {
 void inorder(nodeType *node) {
 	if(node != NULL) {
 		inorder(node->left); 
-		printf("%s\t:\t%d\n", node->key, node->count); 
+		printf("%-15s\t:\t%d\n", node->key, node->count); 
 		inorder(node->right); 
 	}
 }
