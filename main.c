@@ -18,5 +18,7 @@ int main() {
 	
 	inorder(tree); 
 	
+	
+	
 	return 0; 
 }
