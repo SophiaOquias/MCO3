@@ -2,22 +2,18 @@
 
 int main() {
 	nodeType *tree = create("first"); 
-	string word1 = "word"; 
+	string words[10] = {"apple", "banana", "banana", "orange", "cherry", "umbrella", "penguin", "orange", "nine", "ten"}; 
+	int i;
 	
-	insert(tree, "word");
-	insert(tree, "animal"); 
-	
-	if(search(tree, word1)) {
-		incrementCount(searchNode(tree, word1));
-	}
-	else {
-		insert(tree, word1); 
+	for(i = 0; i < 10; i++) {
+		if(search(tree, words[i]) == 1) {
+			incrementCount(searchNode(tree, words[i]));
+		}
+		else
+			insert(tree, words[i]); 
 	}
 	
 	inorder(tree); 
-	
-	if(search(tree, "exist") == 0)
-    	printf("not exist\n"); 
 	
 	return 0; 
 }
