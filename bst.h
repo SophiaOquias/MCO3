@@ -4,6 +4,7 @@
 
 typedef struct node {
 	string key;
+	int count; 
 	struct node *left, *right; 
 } nodeType; 
 
@@ -14,6 +15,7 @@ nodeType *create(string word) {
 	nodeType *node = (nodeType*)malloc(sizeof(nodeType));
 	
 	strcpy(node->key, word);
+	node->count = 1; 
 	node->left = NULL;
 	node->right = NULL;
 	
@@ -56,7 +58,25 @@ nodeType *insert(nodeType *node, string word) {
 void inorder(nodeType *node) {
 	if(node != NULL) {
 		inorder(node->left); 
-		printf("%s\n", node->key); 
+		printf("%s\t:\t%d\n", node->key, node->count); 
 		inorder(node->right); 
 	}
+}
+
+
+// returns the node that matches the key 
+nodeType *searchNode(nodeType *node, string key) {
+	if(strcmp(key, node->key) == 0) // if key == node->key
+		return node; 
+	if(node == NULL)
+		return NULL;
+	if(strcmp(key, node->key) < 0) // if key < node->key 
+		return searchNode(node->left, key);
+	else
+		return searchNode(node->right, key); 
+}
+
+// increments count property in node
+void incrementCount(nodeType *node) {
+	node->count += 1; 
 }
