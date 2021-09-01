@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Sophia/CODES/C/MCO3/bst.h
+sstring.h
+C:/Sophia/CODES/C/MCO3/sstring.h
+stdlib.h
+-
+
+C:/Sophia/CODES/C/MCO3/main.c
+bst.h
+C:/Sophia/CODES/C/MCO3/bst.h
+
+C:/Sophia/CODES/C/MCO3/sstring.h
+string.h
+-
+stdio.h
+-
+

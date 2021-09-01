@@ -1,0 +1,3 @@
+C:/Sophia/CODES/C/MCO3/cmake-build-debug/CMakeFiles/MCO3.dir
+C:/Sophia/CODES/C/MCO3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Sophia/CODES/C/MCO3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
