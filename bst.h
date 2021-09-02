@@ -78,7 +78,6 @@ void destroy(nodeType *node)  {
 		node->right = NULL; 
 		free(node); 
 	}
-
 }
 
 // increments count property in node
