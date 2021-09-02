@@ -18,5 +18,15 @@ int main() {
 	
 	inorder(tree); 
 	
+	printf("------------------------------------------------------------\n");
+	
+	destroy(tree);
+	
+	inorder(tree);
+	
+	if(tree == NULL) {
+		printf("node is null bravo!\n");
+	}
+	
 	return 0; 
 }
