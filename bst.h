@@ -69,6 +69,18 @@ void inorder(nodeType *node) {
 	}
 }
 
+// destroys tree 
+void destroy(nodeType *node)  {
+	if(node != NULL) {
+		destroy(node->left);
+		node->left = NULL; 
+		destroy(node->right);
+		node->right = NULL; 
+		free(node); 
+	}
+
+}
+
 // increments count property in node
 void incrementCount(nodeType *node) {
 	node->count += 1; 
