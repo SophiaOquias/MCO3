@@ -24,9 +24,5 @@ int main() {
 	
 	inorder(tree);
 	
-	if(tree == NULL) {
-		printf("node is null bravo!\n");
-	}
-	
 	return 0; 
 }
