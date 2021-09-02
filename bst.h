@@ -34,14 +34,10 @@ nodeType *searchNode(nodeType *node, string key) {
 
 // returns 1 if string exists in a tree, 0 if otherwise 
 int search(nodeType *node, string key) {
-	if(node == NULL)
-		return 0;
-	if(strcmp(key, node->key) == 0) // if key == node->key
-		return 1;
-	if(strcmp(key, node->key) < 0) // if key < node->key 
-		return search(node->left, key);
+	if(searchNode(node, key) == NULL)
+		return 0; 
 	else
-		return search(node->right, key);
+		return 1; 
 }
 
 // inserts a string into a tree
