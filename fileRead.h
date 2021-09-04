@@ -37,3 +37,11 @@ nodeType *readFile(FILE *fp, nodeType *root) {
 	
 	return root; 
 }
+
+void outputFile(FILE *fp, nodeType *root) {
+	if(root != NULL) {
+		outputFile(fp, root->left);
+		fprintf(fp, "%-15s\t:\t%d\n", root->key, root->count);
+		outputFile(fp, root->right);
+	}
+}
