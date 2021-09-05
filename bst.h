@@ -61,11 +61,12 @@ nodeType *insert(nodeType *node, string word) {
 }
 
 // prints elements of tree inorder 
-void inorder(nodeType *node) {
+void inorder(nodeType *node, FILE *fp) {
 	if(node != NULL) {
-		inorder(node->left); 
-		printf("%-15s\t:\t%d\n", node->key, node->count); 
-		inorder(node->right); 
+		inorder(node->left, fp); 
+		printf("%-15s\t:\t%d\n", node->key, node->count);
+		fprintf(fp,"%-15s\t:\t%d\n", node->key, node->count); /*word.txt*/
+		inorder(node->right, fp); 
 	}
 }
 
@@ -84,3 +85,4 @@ void destroy(nodeType *node)  {
 void incrementCount(nodeType *node) {
 	node->count += 1; 
 }
+
