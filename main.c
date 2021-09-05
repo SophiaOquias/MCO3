@@ -2,8 +2,6 @@
 
 int main() { 
 	
-	string filename;
-  	char temp; 
   	FILE *input;
   	FILE *output; /*WORDS.txt*/
 	nodeType *tree = NULL; 
