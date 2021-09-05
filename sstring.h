@@ -19,21 +19,11 @@ int isLetter(char letter) {
 	return 0; 
 }
 
-// returns 1 if word1 and word2 have the same first letter, 0 if otherwise 
-int isSameFirst(string word1, string word2) {
-	if(word1[0] == word2[0])
-		return 1;
-	
-	return 0; 
+// converts an uppercase latter to lowercase 
+char convertLowCase(char letter) {
+	if(isCapital(letter))
+		letter += 32;
+
+	return letter; 
 }
 
-// converts all capital letters in a string to lower case letters 
-void convertLowCase(string word) {
-	int i;
-	
-	for(i = 0; i < strlen(word); i++) {
-		if(isCapital(word[i])) {
-			word[i] += 32; // 32 is the difference between 'a' and 'A' on the ASCII Table 
-		}
-	}
-}
