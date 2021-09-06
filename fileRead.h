@@ -24,19 +24,27 @@ returns the root node */
 nodeType *readFile(FILE *fp, nodeType *root) {
 	string temp = "";
 	char c; 
-	int i = 0; 
+	int i = 0, j; 
 
 	while((fscanf(fp, "%c", &c)) == 1) {
 
-		if(isLetter(c) && c != '\n') {
+		if((isLetter(c) || c == '\'') && c != '\n') {
 			if(isCapital(c))
 				c = convertLowCase(c); 
 			temp[i] = c; 
 			i++; 
 		}
-		else {
-			temp[i] = '\0'; 
-
+		else { 
+		
+			temp[i] = '\0';
+			
+			// if word begins with an apostrophe (')
+			if(temp[0] == '\'') {
+				for(j = 0; j < strlen(temp); j++) {
+					temp[j] = temp[j + 1];
+				}
+			}
+			
 			if(strlen(temp) >= 3) {
 				if(root == NULL) 
 					root = create(temp); // create node if tree is empty
